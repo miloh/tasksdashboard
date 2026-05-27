@@ -98,7 +98,7 @@ export default function TaskDetailPage() {
       case '3D Printing': return 'bg-blue-50 text-blue-700 border-blue-300';
       case 'Electronics': return 'bg-yellow-50 text-yellow-700 border-yellow-300';
       case 'Laser Cutting': return 'bg-red-50 text-red-700 border-red-300';
-      case 'CNC': return 'bg-purple-50 text-purple-700 border-purple-300';
+      case 'CNC': return 'bg-brand-50 text-brand-700 border-brand-400';
       case 'General': return 'bg-gray-50 text-gray-700 border-gray-300';
       case 'Admin': return 'bg-pink-50 text-pink-700 border-pink-300';
       default: return 'bg-gray-50 text-gray-700 border-gray-300';
@@ -128,7 +128,7 @@ export default function TaskDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-white text-2xl">Loading task...</div>
       </div>
     );
@@ -136,14 +136,14 @@ export default function TaskDetailPage() {
 
   if (error || !task) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-md text-center">
           <div className="text-6xl mb-4">❌</div>
           <h1 className="text-2xl font-bold text-white mb-2">Task Not Found</h1>
           <p className="text-white/80 mb-6">{error}</p>
           <button
             onClick={() => router.push('/')}
-            className="px-6 py-3 bg-white text-purple-900 rounded-xl font-semibold hover:bg-white/90 transition-colors"
+            className="px-6 py-3 bg-white text-brand-900 rounded-xl font-semibold hover:bg-white/90 transition-colors"
           >
             Back to Tasks
           </button>
@@ -153,7 +153,7 @@ export default function TaskDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900">
       {/* Top Navigation Bar */}
       <div className="bg-white/10 backdrop-blur-md border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -167,14 +167,14 @@ export default function TaskDetailPage() {
           {currentUser ? (
             <button
               onClick={() => router.push(`/volunteer?id=${currentUser.id}`)}
-              className="px-4 py-2 bg-white text-purple-900 rounded-lg hover:bg-white/90 transition-colors font-semibold"
+              className="px-4 py-2 bg-white text-brand-900 rounded-lg hover:bg-white/90 transition-colors font-semibold"
             >
               👤 {currentUser.name}
             </button>
           ) : (
             <button
               onClick={() => router.push('/auth/discord')}
-              className="px-4 py-2 bg-white text-purple-900 rounded-lg hover:bg-white/90 transition-colors font-semibold"
+              className="px-4 py-2 bg-white text-brand-900 rounded-lg hover:bg-white/90 transition-colors font-semibold"
             >
               Login
             </button>
@@ -264,7 +264,7 @@ export default function TaskDetailPage() {
             <div className="mt-8 pt-6 border-t border-white/20">
               <button
                 onClick={handleClaimTask}
-                className="w-full sm:w-auto px-8 py-4 bg-white text-purple-900 rounded-xl font-bold text-lg hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg"
+                className="w-full sm:w-auto px-8 py-4 bg-white text-brand-900 rounded-xl font-bold text-lg hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg"
               >
                 {currentUser ? '🎯 Claim & Start This Task' : '🔐 Login to Claim Task'}
               </button>

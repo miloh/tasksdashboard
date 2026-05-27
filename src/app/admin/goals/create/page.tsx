@@ -130,11 +130,11 @@ export default function GoalsAdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 p-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl">
           <h1 className="text-4xl font-bold text-white mb-2">🎯 Goal Creator</h1>
-          <p className="text-purple-200 mb-8">Create structured learning goals with multi-step paths</p>
+          <p className="text-brand-200 mb-8">Create structured learning goals with multi-step paths</p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Icon */}
@@ -317,7 +317,7 @@ export default function GoalsAdminPage() {
                   <div key={index} className="bg-white/10 rounded-xl p-4">
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-2 flex-1">
-                        <span className="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        <span className="bg-brand-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                           {step.number}
                         </span>
                         <input
@@ -393,7 +393,7 @@ export default function GoalsAdminPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex-1 bg-white text-purple-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-white text-brand-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? 'Creating...' : '✨ Create Goal'}
               </button>

@@ -268,7 +268,7 @@ export default function ClaimPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center p-4">
       <div className="max-w-2xl w-full bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl">
         
         {/* Success Screen */}
@@ -292,7 +292,7 @@ export default function ClaimPage() {
             </div>
             <button
               onClick={resetForm}
-              className="px-8 py-4 bg-white text-purple-900 rounded-xl font-bold text-lg hover:bg-white/90 transition-colors"
+              className="px-8 py-4 bg-white text-brand-900 rounded-xl font-bold text-lg hover:bg-white/90 transition-colors"
             >
               Claim Another Task
             </button>
@@ -327,7 +327,7 @@ export default function ClaimPage() {
               <button
                 onClick={handleFindTask}
                 disabled={!taskNumber.trim() || loading}
-                className="w-full bg-white text-purple-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-xl"
+                className="w-full bg-white text-brand-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-xl"
               >
                 {loading ? 'Finding Task...' : 'Continue →'}
               </button>
@@ -384,7 +384,7 @@ export default function ClaimPage() {
                       {isSelected && <span className="text-white text-xs font-bold">✓</span>}
                     </div>
                     
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 overflow-hidden flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-secondary-600 overflow-hidden flex-shrink-0">
                       {vol.profile_photo ? (
                         <img
                           src={pb.files.getURL(vol, vol.profile_photo)}
@@ -417,7 +417,7 @@ export default function ClaimPage() {
               <button
                 onClick={handleSelectVolunteers}
                 disabled={selectedVolunteers.length === 0}
-                className="flex-1 px-6 py-3 bg-white text-purple-900 rounded-xl font-bold hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-3 bg-white text-brand-900 rounded-xl font-bold hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Continue →
               </button>

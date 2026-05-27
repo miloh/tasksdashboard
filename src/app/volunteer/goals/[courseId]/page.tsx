@@ -172,7 +172,7 @@ function CourseDetailContent({ params }: CourseDetailProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <div className="bg-gradient-to-r from-brand-600 to-brand-700 text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <button
             onClick={() => router.push(`/volunteer/goals?id=${volunteerId}`)}
@@ -185,7 +185,7 @@ function CourseDetailContent({ params }: CourseDetailProps) {
             <div className="text-6xl">{goal.icon || '🎯'}</div>
             <div className="flex-1">
               <h1 className="text-3xl font-bold mb-2">{goal.title}</h1>
-              <p className="text-purple-100 mb-3">{goal.description}</p>
+              <p className="text-brand-100 mb-3">{goal.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="text-xs px-3 py-1 rounded-full bg-white/20 border border-white/30">
@@ -233,14 +233,14 @@ function CourseDetailContent({ params }: CourseDetailProps) {
               <div
                 key={step.number}
                 className={`bg-white rounded-lg shadow-md overflow-hidden transition-all ${
-                  isCurrentStep ? 'ring-2 ring-indigo-500' : ''
+                  isCurrentStep ? 'ring-2 ring-brand-500' : ''
                 } ${stepCompleted ? 'border-l-4 border-green-500' : ''}`}
               >
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-sm font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+                        <span className="text-sm font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">
                           Step {step.number}
                         </span>
                         <span className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">
@@ -256,9 +256,9 @@ function CourseDetailContent({ params }: CourseDetailProps) {
                       <p className="text-gray-700 text-lg leading-relaxed">{step.description}</p>
                       
                       {step.content && (
-                        <div className="mt-4 bg-gray-50 border-l-4 border-indigo-500 p-4">
+                        <div className="mt-4 bg-gray-50 border-l-4 border-brand-500 p-4">
                           {step.type === 'video' ? (
-                            <a href={step.content} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline font-semibold">
+                            <a href={step.content} target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline font-semibold">
                               🎥 Watch Video →
                             </a>
                           ) : (
@@ -275,7 +275,7 @@ function CourseDetailContent({ params }: CourseDetailProps) {
                       className={`px-6 py-2 rounded-lg font-semibold transition-all ${
                         stepCompleted
                           ? 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                          : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                          : 'bg-brand-600 text-white hover:bg-brand-700'
                       }`}
                     >
                       {stepCompleted ? 'Mark Incomplete' : 'Mark Complete'}
@@ -283,7 +283,7 @@ function CourseDetailContent({ params }: CourseDetailProps) {
                     {!isCurrentStep && (
                       <button
                         onClick={() => setCurrentStep(index)}
-                        className="px-4 py-2 rounded-lg border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold transition-all"
+                        className="px-4 py-2 rounded-lg border-2 border-brand-600 text-brand-600 hover:bg-brand-50 font-semibold transition-all"
                       >
                         Focus This Step
                       </button>
@@ -333,14 +333,14 @@ function CourseDetailContent({ params }: CourseDetailProps) {
             <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Congratulations!</h2>
             <p className="text-gray-600 mb-2">You completed:</p>
-            <p className="text-xl font-bold text-indigo-600 mb-6">{goal.title}</p>
+            <p className="text-xl font-bold text-brand-600 mb-6">{goal.title}</p>
             <p className="text-gray-600 mb-6">
               Keep going and achieve more goals!
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => router.push(`/volunteer/goals?id=${volunteerId}`)}
-                className="flex-1 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all"
+                className="flex-1 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-semibold transition-all"
               >
                 Browse More Goals
               </button>

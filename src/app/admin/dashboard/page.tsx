@@ -211,12 +211,12 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <div className="bg-gradient-to-r from-brand-600 to-secondary-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold">🔧 Admin Dashboard</h1>
-              <p className="text-purple-100 mt-1">Manage tasks, completions, and volunteers</p>
+              <p className="text-brand-100 mt-1">Manage tasks, completions, and volunteers</p>
             </div>
             <button
               onClick={handleLogout}
@@ -237,7 +237,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('tasks')}
                 className={`px-6 py-4 text-sm font-medium border-b-2 ${
                   activeTab === 'tasks'
-                    ? 'border-purple-500 text-purple-600'
+                    ? 'border-brand-500 text-brand-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -247,7 +247,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('completions')}
                 className={`px-6 py-4 text-sm font-medium border-b-2 ${
                   activeTab === 'completions'
-                    ? 'border-purple-500 text-purple-600'
+                    ? 'border-brand-500 text-brand-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -257,7 +257,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab('volunteers')}
                 className={`px-6 py-4 text-sm font-medium border-b-2 ${
                   activeTab === 'volunteers'
-                    ? 'border-purple-500 text-purple-600'
+                    ? 'border-brand-500 text-brand-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -289,7 +289,7 @@ export default function AdminDashboard() {
                         }`}>
                           {task.status}
                         </span>
-                        <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800">
+                        <span className="text-xs px-2 py-1 rounded-full bg-brand-100 text-brand-800">
                           {task.zone}
                         </span>
                       </div>

@@ -261,7 +261,7 @@ export default function EditTaskPage() {
   // Show loading while checking auth
   if (status === 'loading' || !authChecked) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-center space-y-4">
           <div className="animate-spin text-6xl">⏳</div>
           <p className="text-white text-xl">Checking authentication...</p>
@@ -273,7 +273,7 @@ export default function EditTaskPage() {
   // If not authenticated after check, show redirecting message
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-center space-y-4">
           <div className="text-6xl">🔒</div>
           <p className="text-white text-xl">Authentication required. Redirecting to login...</p>
@@ -285,7 +285,7 @@ export default function EditTaskPage() {
   // Show loading while fetching task data
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-center space-y-4">
           <div className="animate-spin text-6xl">⏳</div>
           <p className="text-white text-xl">Loading task...</p>
@@ -296,7 +296,7 @@ export default function EditTaskPage() {
 
   if (!task) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-center space-y-4">
           <div className="text-6xl">❌</div>
           <p className="text-white text-xl">Task not found</p>
@@ -312,7 +312,7 @@ export default function EditTaskPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 p-4">
       <div className="max-w-2xl mx-auto py-8">
         <button
           onClick={() => router.back()}
@@ -396,7 +396,7 @@ export default function EditTaskPage() {
                 className="w-full px-4 py-3 rounded-xl bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white/60"
               >
                 {zones.map((zone) => (
-                  <option key={zone} value={zone} className="bg-purple-900">
+                  <option key={zone} value={zone} className="bg-brand-900">
                     {zone}
                   </option>
                 ))}
@@ -438,9 +438,9 @@ export default function EditTaskPage() {
                 }
                 className="w-full px-4 py-3 rounded-xl bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white/60"
               >
-                <option value="open" className="bg-purple-900">Open</option>
-                <option value="in_progress" className="bg-purple-900">In Progress</option>
-                <option value="completed" className="bg-purple-900">Completed</option>
+                <option value="open" className="bg-brand-900">Open</option>
+                <option value="in_progress" className="bg-brand-900">In Progress</option>
+                <option value="completed" className="bg-brand-900">Completed</option>
               </select>
             </div>
 
@@ -456,9 +456,9 @@ export default function EditTaskPage() {
                 }
                 className="w-full px-4 py-3 rounded-xl bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white/60"
               >
-                <option value="" className="bg-purple-900">-- Unassigned --</option>
+                <option value="" className="bg-brand-900">-- Unassigned --</option>
                 {volunteers.map((volunteer) => (
-                  <option key={volunteer.id} value={volunteer.id} className="bg-purple-900">
+                  <option key={volunteer.id} value={volunteer.id} className="bg-brand-900">
                     {getVolunteerName(volunteer)} ({Math.round((volunteer.total_minutes || 0) / 60)}h contributed)
                   </option>
                 ))}
@@ -492,7 +492,7 @@ export default function EditTaskPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full bg-white text-purple-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-xl"
+              className="w-full bg-white text-brand-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-xl"
             >
               {submitting ? 'Updating...' : 'Update Task'}
             </button>

@@ -140,7 +140,7 @@ function RegisterPageContent() {
 
   if (shouldShowLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-white text-xl">
           {redirecting || status === 'unauthenticated' || (status === 'authenticated' && !(session?.user as any)?.needsRegistration)
             ? 'Redirecting...'
@@ -155,7 +155,7 @@ function RegisterPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl">
         {!processing && (
           <div className="text-center space-y-6">
@@ -201,7 +201,7 @@ function RegisterPageContent() {
               {!photoUrl ? (
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="flex-1 bg-white text-purple-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors text-xl"
+                  className="flex-1 bg-white text-brand-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors text-xl"
                 >
                   📷 Take Photo
                 </button>
@@ -239,7 +239,7 @@ function RegisterPageContent() {
 export default function RegisterPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 flex items-center justify-center">
         <div className="text-white text-xl">Loading...</div>
       </div>
     }>

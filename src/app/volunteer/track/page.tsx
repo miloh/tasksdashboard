@@ -301,7 +301,7 @@ function TrackPageContent() {
           <div className="flex gap-3 justify-center">
             <button 
               onClick={() => window.location.reload()}
-              className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 font-semibold"
+              className="bg-brand-600 text-white px-6 py-3 rounded-lg hover:bg-brand-700 font-semibold"
             >
               Retry
             </button>
@@ -341,7 +341,7 @@ function TrackPageContent() {
   const progressPercent = Math.min((elapsedSeconds / estimatedSeconds) * 100, 100);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-brand-50 to-brand-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -349,7 +349,7 @@ function TrackPageContent() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-sm font-mono text-gray-500">#{task.task_number}</span>
-                <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800 border border-purple-300">
+                <span className="text-xs px-2 py-1 rounded-full bg-brand-100 text-brand-800 border border-brand-400">
                   {task.zone}
                 </span>
               </div>
@@ -388,7 +388,7 @@ function TrackPageContent() {
               onClick={() => setMode('manual')}
               className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
                 mode === 'manual'
-                  ? 'bg-purple-600 text-white shadow-md'
+                  ? 'bg-brand-600 text-white shadow-md'
                   : 'text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -398,7 +398,7 @@ function TrackPageContent() {
               onClick={() => setMode('timer')}
               className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
                 mode === 'timer'
-                  ? 'bg-purple-600 text-white shadow-md'
+                  ? 'bg-brand-600 text-white shadow-md'
                   : 'text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -419,13 +419,13 @@ function TrackPageContent() {
                 onChange={(e) => setManualMinutes(e.target.value)}
                 placeholder="30"
                 min="1"
-                className="text-5xl font-bold text-gray-900 text-center border-2 border-gray-300 rounded-lg px-6 py-4 w-full max-w-xs mx-auto focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="text-5xl font-bold text-gray-900 text-center border-2 border-gray-300 rounded-lg px-6 py-4 w-full max-w-xs mx-auto focus:ring-2 focus:ring-brand-500 focus:border-transparent"
               />
               <div className="text-sm text-gray-500 mt-3">
                 Estimated: {formatMinutes(task.estimated_minutes)}
               </div>
               {selectedVolunteers.length > 1 && (
-                <div className="text-xs text-purple-600 mt-2">
+                <div className="text-xs text-brand-600 mt-2">
                   Each of the {selectedVolunteers.length} selected volunteers will receive this amount of time
                 </div>
               )}
@@ -449,7 +449,7 @@ function TrackPageContent() {
                 <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                   <div
                     className={`h-full transition-all duration-300 ${
-                      progressPercent > 100 ? 'bg-orange-500' : 'bg-purple-600'
+                      progressPercent > 100 ? 'bg-orange-500' : 'bg-brand-600'
                     }`}
                     style={{ width: `${Math.min(progressPercent, 100)}%` }}
                   />
@@ -525,12 +525,12 @@ function TrackPageContent() {
                 </button>
               </div>
             </div>
-            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-2">
-              <div className="flex items-center gap-2 text-sm text-purple-800 mb-2">
+            <div className="bg-brand-50 border border-brand-200 rounded-lg p-4 mb-2">
+              <div className="flex items-center gap-2 text-sm text-brand-800 mb-2">
                 <span>ℹ️</span>
                 <span>Each selected volunteer will receive the same amount of time credit</span>
               </div>
-              <div className="text-xs text-purple-600">
+              <div className="text-xs text-brand-600">
                 {selectedVolunteers.length} selected · {mode === 'timer' ? Math.ceil(elapsedSeconds / 60) : (parseInt(manualMinutes) || 0)} min each
               </div>
             </div>
@@ -546,18 +546,18 @@ function TrackPageContent() {
                     type="button"
                     onClick={() => toggleVolunteerSelection(vol.id)}
                     className={`w-full px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors ${
-                      isSelected ? 'bg-purple-50' : ''
+                      isSelected ? 'bg-brand-50' : ''
                     }`}
                   >
                     <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 ${
                       isSelected 
-                        ? 'bg-purple-600 border-purple-600' 
+                        ? 'bg-brand-600 border-purple-600' 
                         : 'border-gray-300'
                     }`}>
                       {isSelected && <span className="text-white text-xs">✓</span>}
                     </div>
                     
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 overflow-hidden flex-shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-600 to-secondary-600 overflow-hidden flex-shrink-0">
                       {vol.profile_photo ? (
                         <img
                           src={pb.files.getURL(vol, vol.profile_photo)}
@@ -574,7 +574,7 @@ function TrackPageContent() {
                     <div className="flex-1 text-left">
                       <p className="font-medium text-gray-900">
                         {getVolunteerName(vol)}
-                        {isCurrentUser && <span className="text-purple-600 text-xs ml-2">(You)</span>}
+                        {isCurrentUser && <span className="text-brand-600 text-xs ml-2">(You)</span>}
                       </p>
                       <p className="text-xs text-gray-500">{Math.round((vol.total_minutes || 0) / 60)}h contributed</p>
                     </div>
@@ -591,7 +591,7 @@ function TrackPageContent() {
             <textarea
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent text-gray-900"
               rows={3}
               placeholder="What did you accomplish? Any notes for the next person?"
             />
@@ -601,7 +601,7 @@ function TrackPageContent() {
             <button
               onClick={handleComplete}
               disabled={submitting || selectedVolunteers.length === 0 || (mode === 'timer' && elapsedSeconds === 0) || (mode === 'manual' && !manualMinutes)}
-              className="flex-1 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting 
                 ? 'Submitting...' 

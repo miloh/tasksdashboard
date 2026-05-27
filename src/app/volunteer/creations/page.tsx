@@ -143,7 +143,7 @@ function VolunteerCreationsContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+      <div className="bg-gradient-to-r from-accent-600 to-brand-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <button
             onClick={() => router.push(`/volunteer/tasks?id=${volunteerId}`)}
@@ -155,13 +155,13 @@ function VolunteerCreationsContent() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold mb-2">🎨 My Creations</h1>
-              <p className="text-purple-100 text-lg">
+              <p className="text-brand-100 text-lg">
                 Showcase your makerspace projects to inspire others
               </p>
             </div>
             <button
               onClick={() => setShowUploadForm(true)}
-              className="px-6 py-3 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold shadow-lg flex items-center gap-2"
+              className="px-6 py-3 bg-white text-brand-600 rounded-lg hover:bg-brand-50 transition-colors font-semibold shadow-lg flex items-center gap-2"
             >
               <span className="text-xl">➕</span>
               Share Creation
@@ -172,7 +172,7 @@ function VolunteerCreationsContent() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Public Gallery Link */}
-        <div className="mb-6 bg-gradient-to-r from-blue-50 to-purple-50 border border-purple-200 rounded-lg p-4">
+        <div className="mb-6 bg-gradient-to-r from-blue-50 to-purple-50 border border-brand-200 rounded-lg p-4">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-semibold text-gray-900 mb-1">🌍 View Public Gallery</h3>
@@ -180,7 +180,7 @@ function VolunteerCreationsContent() {
             </div>
             <button
               onClick={() => router.push('/creations')}
-              className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+              className="px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-medium"
             >
               Browse All →
             </button>
@@ -197,7 +197,7 @@ function VolunteerCreationsContent() {
             </p>
             <button
               onClick={() => setShowUploadForm(true)}
-              className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+              className="px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold"
             >
               Share Your First Creation
             </button>
@@ -249,7 +249,7 @@ function CreationCard({ creation, volunteerId, onDelete }: { creation: Creation;
           />
         </div>
       ) : (
-        <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+        <div className="aspect-video bg-gradient-to-br from-brand-100 to-accent-500/20 flex items-center justify-center">
           <span className="text-6xl">🎨</span>
         </div>
       )}
@@ -421,7 +421,7 @@ function UploadCreationForm({ volunteerId, onClose, onSuccess }: { volunteerId: 
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g., Custom Laser-Cut Wooden Box"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none"
             />
           </div>
 
@@ -436,7 +436,7 @@ function UploadCreationForm({ volunteerId, onClose, onSuccess }: { volunteerId: 
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Tell us about your creation... What inspired it? What tools did you use? Any challenges or lessons learned?"
               rows={6}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-black placeholder-gray-500 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none"
             />
           </div>
 
@@ -451,7 +451,7 @@ function UploadCreationForm({ volunteerId, onClose, onSuccess }: { volunteerId: 
               multiple
               required
               onChange={handlePhotoChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-black focus:ring-2 focus:ring-purple-500 focus:border-purple-500 focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-black focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100"
             />
             <p className="text-sm text-gray-500 mt-1">
               Upload multiple photos to show different angles and details
@@ -461,7 +461,7 @@ function UploadCreationForm({ volunteerId, onClose, onSuccess }: { volunteerId: 
             {photoPreviews.length > 0 && (
               <div className="mt-4 grid grid-cols-3 gap-3">
                 {photoPreviews.map((preview, index) => (
-                  <div key={index} className="aspect-square rounded-lg overflow-hidden border-2 border-purple-200">
+                  <div key={index} className="aspect-square rounded-lg overflow-hidden border-2 border-brand-200">
                     <img
                       src={preview}
                       alt={`Preview ${index + 1}`}
@@ -485,7 +485,7 @@ function UploadCreationForm({ volunteerId, onClose, onSuccess }: { volunteerId: 
             <button
               type="submit"
               disabled={uploading || photoFiles.length === 0}
-              className="flex-1 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {uploading ? 'Uploading...' : 'Share Creation'}
             </button>

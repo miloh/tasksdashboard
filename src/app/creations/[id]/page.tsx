@@ -44,7 +44,7 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-accent-500 via-brand-600 to-secondary-600 flex items-center justify-center">
         <div className="text-white text-xl">Loading...</div>
       </div>
     );
@@ -52,12 +52,12 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
 
   if (!creation) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-accent-500 via-brand-600 to-secondary-600 flex items-center justify-center">
         <div className="text-center">
           <div className="text-white text-xl mb-4">Creation not found</div>
           <button
             onClick={() => router.push('/creations')}
-            className="px-6 py-3 bg-white text-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold"
+            className="px-6 py-3 bg-white text-brand-600 rounded-lg hover:bg-brand-50 transition-colors font-semibold"
           >
             ← Back to Gallery
           </button>
@@ -85,7 +85,7 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500">
+    <div className="min-h-screen bg-gradient-to-br from-accent-500 via-brand-600 to-secondary-600">
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -148,7 +148,7 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
           <div className="p-8">
             {/* Creator Info */}
             <div className="flex items-center gap-4 mb-6 pb-6 border-b border-gray-200">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold overflow-hidden">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-brand-400 to-accent-500 flex items-center justify-center text-white text-2xl font-bold overflow-hidden">
                 {volunteer?.profile_photo ? (
                   <img
                     src={pb.files.getUrl(volunteer, volunteer.profile_photo)}
@@ -195,8 +195,8 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
                       onClick={() => setCurrentPhotoIndex(index)}
                       className={`aspect-square rounded-lg overflow-hidden transition-all ${
                         currentPhotoIndex === index
-                          ? 'ring-4 ring-purple-500 scale-105'
-                          : 'ring-2 ring-gray-200 hover:ring-purple-300'
+                          ? 'ring-4 ring-brand-500 scale-105'
+                          : 'ring-2 ring-gray-200 hover:ring-brand-400'
                       }`}
                     >
                       <img
@@ -214,7 +214,7 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
             <div className="mt-8 pt-8 border-t border-gray-200 flex gap-4">
               <button
                 onClick={() => router.push('/creations')}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg"
+                className="flex-1 px-6 py-3 bg-gradient-to-r from-brand-600 to-accent-600 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg"
               >
                 View More Creations
               </button>

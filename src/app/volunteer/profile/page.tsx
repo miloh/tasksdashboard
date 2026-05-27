@@ -334,7 +334,7 @@ function ProfilePageContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <div className="bg-gradient-to-r from-brand-600 to-secondary-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <button
             onClick={() => router.push(`/volunteer/tasks?id=${volunteerId}`)}
@@ -442,13 +442,13 @@ function ProfilePageContent() {
               {usernameSuccess && (
                 <p className="text-green-200 text-sm mb-2">✓ Username updated successfully!</p>
               )}
-              <p className="text-purple-100">
+              <p className="text-brand-100">
                 {volunteer.email}
               </p>
               <div className="mt-2 flex items-center gap-2">
                 <span className="text-2xl">🏆</span>
                 <span className="text-xl font-semibold">Level {Math.floor(tasksCompleted / 10) + 1}</span>
-                <span className="text-sm text-purple-200">({tasksCompleted % 10}/10 tasks to next level)</span>
+                <span className="text-sm text-brand-200">({tasksCompleted % 10}/10 tasks to next level)</span>
               </div>
             </div>
           </div>
@@ -457,7 +457,7 @@ function ProfilePageContent() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Milestone Progress */}
-        <div className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg shadow-lg p-6 mb-8 text-white">
+        <div className="bg-gradient-to-r from-brand-600 to-secondary-600 rounded-lg shadow-lg p-6 mb-8 text-white">
           <h2 className="text-2xl font-bold mb-4">🎯 Milestone Progress</h2>
           <div className="space-y-3">
             <div>
@@ -471,7 +471,7 @@ function ProfilePageContent() {
                   style={{ width: `${(tasksCompleted % 10) * 10}%` }}
                 ></div>
               </div>
-              <p className="text-sm mt-2 text-purple-100">
+              <p className="text-sm mt-2 text-brand-100">
                 {10 - (tasksCompleted % 10)} tasks remaining to reach Level {Math.floor(tasksCompleted / 10) + 2}
               </p>
             </div>
@@ -481,7 +481,7 @@ function ProfilePageContent() {
                   key={i}
                   className={`h-12 rounded-lg flex items-center justify-center font-bold ${
                     i < (tasksCompleted % 10)
-                      ? 'bg-white text-purple-600'
+                      ? 'bg-white text-brand-600'
                       : 'bg-white/20 text-white/50'
                   }`}
                 >
@@ -541,7 +541,7 @@ function ProfilePageContent() {
               </p>
               <button
                 onClick={() => router.push(`/volunteer/tasks?id=${volunteerId}`)}
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+                className="px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold"
               >
                 Browse Tasks
               </button>
@@ -556,7 +556,7 @@ function ProfilePageContent() {
                         <span className="text-sm font-mono text-gray-500">
                           #{completion.task_number}
                         </span>
-                        <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800 border border-purple-300">
+                        <span className="text-xs px-2 py-1 rounded-full bg-brand-100 text-brand-800 border border-brand-400">
                           {completion.task_zone}
                         </span>
                       </div>
@@ -573,7 +573,7 @@ function ProfilePageContent() {
                     </div>
 
                     <div className="text-right ml-4">
-                      <div className="text-2xl font-bold text-purple-600">
+                      <div className="text-2xl font-bold text-brand-600">
                         {Math.round(completion.actual_minutes / 60)}h {completion.actual_minutes % 60}m
                       </div>
                       <div className="text-xs text-gray-500 mt-1">

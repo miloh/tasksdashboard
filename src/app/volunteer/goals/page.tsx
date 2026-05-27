@@ -119,9 +119,9 @@ function GoalsPageContent() {
       'Electronics': 'from-yellow-500 to-amber-500',
       'Woodshop': 'from-amber-700 to-yellow-700',
       'CNC': 'from-green-600 to-emerald-600',
-      'Vinyl': 'from-pink-500 to-purple-500',
+      'Vinyl': 'from-accent-500 to-brand-600',
     };
-    return colors[category] || 'from-purple-500 to-blue-500';
+    return colors[category] || 'from-brand-600 to-secondary-600';
   };
 
   const totalGoals = goals.length;
@@ -202,7 +202,7 @@ function GoalsPageContent() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <div className="bg-gradient-to-r from-brand-600 to-brand-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <button
             onClick={() => router.push(`/volunteer/tasks?id=${volunteerId}`)}
@@ -214,13 +214,13 @@ function GoalsPageContent() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold mb-2">🎯 Learning Goals</h1>
-              <p className="text-purple-100 text-lg">
+              <p className="text-brand-100 text-lg">
                 Master the equipment and skills at {siteConfig.name}
               </p>
             </div>
             <div className="text-right">
               <div className="text-5xl font-bold">{completedCount}/{totalGoals}</div>
-              <div className="text-sm text-purple-200">Goals Completed</div>
+              <div className="text-sm text-brand-200">Goals Completed</div>
             </div>
           </div>
 
@@ -250,7 +250,7 @@ function GoalsPageContent() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all ${
                   selectedCategory === category
-                    ? 'bg-indigo-600 text-white shadow-lg'
+                    ? 'bg-brand-600 text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
@@ -314,7 +314,7 @@ function GoalsPageContent() {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-4">
-                        <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800 border border-purple-300">
+                        <span className="text-xs px-2 py-1 rounded-full bg-brand-100 text-brand-800 border border-brand-400">
                           {goal.category}
                         </span>
                         <span className={`text-xs px-2 py-1 rounded-full border ${getDifficultyColor(goal.difficulty)}`}>
@@ -328,7 +328,7 @@ function GoalsPageContent() {
                       {goal.is_sbu && (
                         <div className="text-sm text-gray-600 mb-4 space-y-1">
                           {goal.zone_leader && (
-                            <div className="font-semibold text-indigo-700">👤 Zone Leader: {goal.zone_leader}</div>
+                            <div className="font-semibold text-brand-700">👤 Zone Leader: {goal.zone_leader}</div>
                           )}
                           {goal.sbu_schedule && (
                             <div className="text-xs text-gray-500">📅 SBU: {goal.sbu_schedule}</div>
@@ -346,7 +346,7 @@ function GoalsPageContent() {
                           className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-all ${
                             isCompleted
                               ? 'bg-green-600 hover:bg-green-700 text-white'
-                              : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+                              : 'bg-brand-600 hover:bg-brand-700 text-white'
                           }`}
                         >
                           {isCompleted ? 'Review Goal' : 'Start Goal →'}
@@ -381,7 +381,7 @@ function GoalsPageContent() {
                 <p className="text-gray-500 text-lg">No goals found in this category.</p>
                 <button
                   onClick={() => setShowCreateForm(true)}
-                  className="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
+                  className="mt-4 px-6 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold"
                 >
                   Create Your First Goal
                 </button>
@@ -511,7 +511,7 @@ function GoalFormModal({
                   type="text"
                   value={formData.icon}
                   onChange={(e) => setFormData({ ...formData, icon: e.target.value })}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
                   placeholder="🎯"
                   maxLength={2}
                 />
@@ -551,7 +551,7 @@ function GoalFormModal({
                 type="text"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
                 placeholder="Goal title"
                 required
               />
@@ -564,7 +564,7 @@ function GoalFormModal({
               <textarea
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500"
                 placeholder="Goal description"
                 rows={3}
                 required
@@ -579,7 +579,7 @@ function GoalFormModal({
                 <select
                   value={formData.category}
                   onChange={(e) => setFormData({ ...formData, category: e.target.value as any })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-500"
                 >
                   <option value="Custom">Custom</option>
                   <option value="3D Printing">3D Printing</option>
@@ -598,7 +598,7 @@ function GoalFormModal({
                 <select
                   value={formData.difficulty}
                   onChange={(e) => setFormData({ ...formData, difficulty: e.target.value as any })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-500"
                 >
                   <option value="Beginner">Beginner</option>
                   <option value="Intermediate">Intermediate</option>
@@ -615,7 +615,7 @@ function GoalFormModal({
                 type="number"
                 value={formData.estimated_minutes}
                 onChange={(e) => setFormData({ ...formData, estimated_minutes: parseInt(e.target.value) || 60 })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-500"
                 min="1"
               />
             </div>
@@ -647,7 +647,7 @@ function GoalFormModal({
                     <div key={index} className="border border-gray-300 rounded-lg p-4 bg-gray-50">
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <span className="bg-indigo-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+                          <span className="bg-brand-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
                             {step.number}
                           </span>
                           <input
@@ -655,7 +655,7 @@ function GoalFormModal({
                             value={step.title}
                             onChange={(e) => updateStep(index, 'title', e.target.value)}
                             placeholder="Step title"
-                            className="font-semibold px-2 py-1 border border-gray-300 rounded text-black flex-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            className="font-semibold px-2 py-1 border border-gray-300 rounded text-black flex-1 focus:outline-none focus:ring-2 focus:ring-brand-500"
                           />
                         </div>
                         <div className="flex gap-1">
@@ -692,7 +692,7 @@ function GoalFormModal({
                         value={step.description}
                         onChange={(e) => updateStep(index, 'description', e.target.value)}
                         placeholder="Step description"
-                        className="w-full px-2 py-1 border border-gray-300 rounded text-sm text-black mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full px-2 py-1 border border-gray-300 rounded text-sm text-black mb-2 focus:outline-none focus:ring-2 focus:ring-brand-500"
                         rows={2}
                       />
 
@@ -700,7 +700,7 @@ function GoalFormModal({
                         <select
                           value={step.type}
                           onChange={(e) => updateStep(index, 'type', e.target.value)}
-                          className="px-2 py-1 border border-gray-300 rounded text-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          className="px-2 py-1 border border-gray-300 rounded text-sm text-black focus:outline-none focus:ring-2 focus:ring-brand-500"
                         >
                           <option value="text">📄 Text</option>
                           <option value="video">🎥 Video</option>
@@ -713,7 +713,7 @@ function GoalFormModal({
                           value={step.content}
                           onChange={(e) => updateStep(index, 'content', e.target.value)}
                           placeholder={step.type === 'video' ? 'Video URL' : 'Content/Instructions'}
-                          className="px-2 py-1 border border-gray-300 rounded text-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                          className="px-2 py-1 border border-gray-300 rounded text-sm text-black focus:outline-none focus:ring-2 focus:ring-brand-500"
                         />
                       </div>
                     </div>
@@ -725,7 +725,7 @@ function GoalFormModal({
             <div className="flex gap-3 pt-4">
               <button
                 type="submit"
-                className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-semibold"
+                className="flex-1 px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold"
               >
                 {goal ? 'Update Goal' : 'Create Goal'}
               </button>

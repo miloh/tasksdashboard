@@ -3,6 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Theme palette — deployers override these to rebrand */
+  --theme-900: #581c87;   /* darkest — page bg gradient start */
+  --theme-800: #6b21a8;   /* dark surfaces */
+  --theme-700: #7c3aed;   /* mid-dark accents */
+  --theme-600: #8b5cf6;   /* primary accent */
+  --theme-500: #a78bfa;   /* borders, focus rings */
+  --theme-400: #c4b5fd;   /* lighter accents */
+  --theme-200: #e9d5ff;   /* muted text on dark */
+  --theme-100: #f3e8ff;   /* subtle text on dark */
+  --theme-50:  #faf5ff;   /* light bg tint */
+
+  /* Secondary — for gradients, buttons */
+  --theme-secondary-900: #312e81;  /* gradient endpoint (was indigo-900) */
+  --theme-secondary-600: #4f46e5;  /* button gradient mid */
+
+  /* Accent — for highlights, badges */
+  --theme-accent-600: #db2777;     /* pink accents */
+  --theme-accent-500: #ec4899;
 }
 
 @theme inline {
@@ -10,6 +29,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Expose theme colors to Tailwind as 'brand-*' utilities */
+  --color-brand-900: var(--theme-900);
+  --color-brand-800: var(--theme-800);
+  --color-brand-700: var(--theme-700);
+  --color-brand-600: var(--theme-600);
+  --color-brand-500: var(--theme-500);
+  --color-brand-400: var(--theme-400);
+  --color-brand-200: var(--theme-200);
+  --color-brand-100: var(--theme-100);
+  --color-brand-50:  var(--theme-50);
+  --color-secondary-900: var(--theme-secondary-900);
+  --color-secondary-600: var(--theme-secondary-600);
+  --color-accent-600: var(--theme-accent-600);
+  --color-accent-500: var(--theme-accent-500);
 }
 
 @media (prefers-color-scheme: dark) {

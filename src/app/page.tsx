@@ -296,12 +296,12 @@ export default function HomePage() {
   const getZoneColor = (zone: string) => {
     const colors: Record<string, string> = {
       Woodshop: 'bg-amber-100 text-amber-800 border-amber-300',
-      '3D Printing': 'bg-purple-100 text-purple-800 border-purple-300',
+      '3D Printing': 'bg-brand-100 text-brand-800 border-brand-400',
       Electronics: 'bg-blue-100 text-blue-800 border-blue-300',
       'Laser Cutting': 'bg-red-100 text-red-800 border-red-300',
       CNC: 'bg-green-100 text-green-800 border-green-300',
       General: 'bg-gray-100 text-gray-800 border-gray-300',
-      Admin: 'bg-indigo-100 text-indigo-800 border-indigo-300',
+      Admin: 'bg-indigo-100 text-brand-800 border-indigo-300',
     };
     return colors[zone] || colors.General;
   };
@@ -310,7 +310,7 @@ export default function HomePage() {
   const isSplashPage = currentPage === taskPages;
 
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-brand-900 to-slate-900">
       {/* Desktop View - Hidden on mobile (portrait orientation or small screens) */}
       <div className="hidden landscape:md:block h-full p-4">
         <div className="max-w-[1920px] mx-auto h-full flex flex-col">
@@ -321,7 +321,7 @@ export default function HomePage() {
                 <Hammer className="w-6 h-6" />
                 {siteConfig.name} Volunteer Board
         </h1>
-              <p className="text-sm text-purple-200 flex items-center gap-3">
+              <p className="text-sm text-brand-200 flex items-center gap-3">
                 <span className="flex items-center gap-1"><Target className="w-3.5 h-3.5" /> Make an impact</span>
                 <span className="flex items-center gap-1"><Sparkles className="w-3.5 h-3.5" /> Earn recognition</span>
                 <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" /> Build community</span>
@@ -336,7 +336,7 @@ export default function HomePage() {
             >
               <QRCode value={`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/auth/discord`} size={80} />
               <div>
-                <h3 className="text-sm font-bold text-purple-900">Volunteer Portal</h3>
+                <h3 className="text-sm font-bold text-brand-900">Volunteer Portal</h3>
                 <p className="text-xs text-gray-600">Scan or Click to join</p>
               </div>
             </a>
@@ -361,7 +361,7 @@ export default function HomePage() {
                   <h1 className="text-7xl font-bold text-white tracking-tight drop-shadow-lg">
                     {siteConfig.name}
                   </h1>
-                  <p className="text-3xl text-purple-100 leading-relaxed font-light drop-shadow-md">
+                  <p className="text-3xl text-brand-100 leading-relaxed font-light drop-shadow-md">
                     We are a nonprofit makerspace where the community comes together to learn, share, and create. 
                     From 3D printing and laser cutting to woodworking and electronics, we provide access to tools, knowledge, and collaboration.
                   </p>
@@ -375,9 +375,9 @@ export default function HomePage() {
                 <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
                   <ClipboardList className="w-5 h-5" />
                   Open Tasks
-                  <span className="text-sm font-normal text-purple-200">({tasks.length})</span>
+                  <span className="text-sm font-normal text-brand-200">({tasks.length})</span>
                   {tasks.length > TASKS_PER_PAGE && (
-                    <span className="text-sm font-normal text-purple-200 ml-auto">
+                    <span className="text-sm font-normal text-brand-200 ml-auto">
                       Page {currentPage + 1} of {Math.ceil(tasks.length / TASKS_PER_PAGE)}
                     </span>
                   )}
@@ -385,7 +385,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-3 grid-rows-4 gap-2 overflow-hidden h-full">
                   {tasks.length === 0 ? (
                     <div className="col-span-3 row-span-4 flex items-center justify-center">
-                      <p className="text-purple-200 text-center text-lg">
+                      <p className="text-brand-200 text-center text-lg">
                         No open tasks right now. Check back soon!
                       </p>
                     </div>
@@ -397,7 +397,7 @@ export default function HomePage() {
                     return pageTasks.map((task) => (
                       <div
                         key={task.id}
-                        className="bg-white/90 rounded-lg p-3 border-l-4 border-purple-500 flex flex-col gap-1.5 relative overflow-hidden"
+                        className="bg-white/90 rounded-lg p-3 border-l-4 border-brand-500 flex flex-col gap-1.5 relative overflow-hidden"
                       >
                         {task.image && (
                           <div className="w-full mb-2 rounded overflow-hidden">
@@ -456,7 +456,7 @@ export default function HomePage() {
                 </h2>
                 <div className="space-y-2 overflow-y-auto flex-1">
                   {recentCompletions.length === 0 ? (
-                    <p className="text-purple-200 text-center py-8 text-sm">No completed tasks yet</p>
+                    <p className="text-brand-200 text-center py-8 text-sm">No completed tasks yet</p>
                   ) : (
                     recentCompletions.map((completion) => (
                       <div key={completion.id} className="bg-green-500/20 border border-green-400/30 rounded-lg p-2">
@@ -496,7 +496,7 @@ export default function HomePage() {
                 </h2>
                 <div className="space-y-2 overflow-y-auto flex-1">
                   {activeTasks.length === 0 ? (
-                    <p className="text-purple-200 text-center py-8 text-sm">No active tasks</p>
+                    <p className="text-brand-200 text-center py-8 text-sm">No active tasks</p>
                   ) : (
                     activeTasks.map((task) => (
                       <div key={task.id} className="bg-orange-500/20 border border-orange-400/30 rounded-lg p-2">
@@ -538,7 +538,7 @@ export default function HomePage() {
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20 flex flex-col overflow-hidden">
                 <div className="flex flex-col gap-1.5 overflow-hidden">
                   {leaderboard.length === 0 ? (
-                    <p className="text-purple-200 text-center py-8 text-sm">No volunteers yet</p>
+                    <p className="text-brand-200 text-center py-8 text-sm">No volunteers yet</p>
                   ) : (
                     leaderboard.slice(0, 10).map((volunteer) => (
                       <div
@@ -551,7 +551,7 @@ export default function HomePage() {
                             : 'bg-white/5'
                         }`}
                       >
-                        <div className={`${volunteer.rank === 1 ? 'w-12 h-12' : 'w-9 h-9'} rounded-full bg-purple-500 overflow-hidden flex-shrink-0 ${volunteer.rank === 1 ? 'ring-2 ring-yellow-400' : ''}`}>
+                        <div className={`${volunteer.rank === 1 ? 'w-12 h-12' : 'w-9 h-9'} rounded-full bg-brand-500 overflow-hidden flex-shrink-0 ${volunteer.rank === 1 ? 'ring-2 ring-yellow-400' : ''}`}>
                           {volunteer.profile_photo ? (
                             <img
                               src={pb.files.getURL(volunteer, volunteer.profile_photo)}
@@ -566,7 +566,7 @@ export default function HomePage() {
                           <p className={`font-bold text-white ${volunteer.rank === 1 ? 'text-sm' : 'text-xs'} truncate`}>
                             {getVolunteerName(volunteer)}
                           </p>
-                          <p className={`text-purple-200 ${volunteer.rank === 1 ? 'text-xs' : 'text-[10px]'}`}>
+                          <p className={`text-brand-200 ${volunteer.rank === 1 ? 'text-xs' : 'text-[10px]'}`}>
                             {formatTime(volunteer.total_minutes)}
                           </p>
                         </div>
@@ -593,7 +593,7 @@ export default function HomePage() {
           </h1>
           <a
             href="/auth/discord"
-            className="block bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition-colors flex items-center justify-center gap-2"
+            className="block bg-brand-600 text-white text-center py-3 rounded-lg font-bold hover:bg-brand-700 transition-colors flex items-center justify-center gap-2"
           >
             <LogIn className="w-5 h-5" />
             Login / Sign Up
@@ -605,7 +605,7 @@ export default function HomePage() {
           <button
             onClick={() => setMobileView('tasks')}
             className={`flex-1 py-3 text-sm font-semibold flex items-center justify-center gap-1.5 ${
-              mobileView === 'tasks' ? 'text-white bg-purple-600/50' : 'text-purple-200'
+              mobileView === 'tasks' ? 'text-white bg-brand-600/50' : 'text-brand-200'
             }`}
           >
             <ClipboardList className="w-4 h-4" />
@@ -614,7 +614,7 @@ export default function HomePage() {
           <button
             onClick={() => setMobileView('active')}
             className={`flex-1 py-3 text-sm font-semibold flex items-center justify-center gap-1.5 ${
-              mobileView === 'active' ? 'text-white bg-orange-600/50' : 'text-purple-200'
+              mobileView === 'active' ? 'text-white bg-orange-600/50' : 'text-brand-200'
             }`}
           >
             <Flame className="w-4 h-4" />
@@ -623,7 +623,7 @@ export default function HomePage() {
           <button
             onClick={() => setMobileView('completed')}
             className={`flex-1 py-3 text-sm font-semibold flex items-center justify-center gap-1.5 ${
-              mobileView === 'completed' ? 'text-white bg-green-600/50' : 'text-purple-200'
+              mobileView === 'completed' ? 'text-white bg-green-600/50' : 'text-brand-200'
             }`}
           >
             <CheckCircle2 className="w-4 h-4" />
@@ -632,7 +632,7 @@ export default function HomePage() {
           <button
             onClick={() => setMobileView('leaderboard')}
             className={`flex-1 py-3 text-sm font-semibold flex items-center justify-center gap-1.5 ${
-              mobileView === 'leaderboard' ? 'text-white bg-yellow-600/50' : 'text-purple-200'
+              mobileView === 'leaderboard' ? 'text-white bg-yellow-600/50' : 'text-brand-200'
             }`}
           >
             <Trophy className="w-4 h-4" />
@@ -646,10 +646,10 @@ export default function HomePage() {
           {mobileView === 'tasks' && (
             <div className="space-y-4">
               {tasks.length === 0 ? (
-                <p className="text-purple-200 text-center py-8">No open tasks</p>
+                <p className="text-brand-200 text-center py-8">No open tasks</p>
               ) : (
                 tasks.map((task) => (
-                  <div key={task.id} className="bg-white/90 rounded-lg p-4 border-l-4 border-purple-500">
+                  <div key={task.id} className="bg-white/90 rounded-lg p-4 border-l-4 border-brand-500">
                     {task.image && (
                       <img
                         src={pb.files.getURL(task, task.image, { thumb: '400x300' })}
@@ -691,7 +691,7 @@ export default function HomePage() {
           {mobileView === 'active' && (
             <div className="space-y-4">
               {activeTasks.length === 0 ? (
-                <p className="text-purple-200 text-center py-8">No active tasks</p>
+                <p className="text-brand-200 text-center py-8">No active tasks</p>
               ) : (
                 activeTasks.map((task) => (
                   <div key={task.id} className="bg-orange-500/20 border-2 border-orange-400/50 rounded-lg p-4">
@@ -735,7 +735,7 @@ export default function HomePage() {
           {mobileView === 'completed' && (
             <div className="space-y-4">
               {recentCompletions.length === 0 ? (
-                <p className="text-purple-200 text-center py-8">No completed tasks yet</p>
+                <p className="text-brand-200 text-center py-8">No completed tasks yet</p>
               ) : (
                 recentCompletions.map((completion) => (
                   <div key={completion.id} className="bg-green-500/20 border-2 border-green-400/50 rounded-lg p-4">
@@ -773,7 +773,7 @@ export default function HomePage() {
           {mobileView === 'leaderboard' && (
             <div className="space-y-3">
               {leaderboard.length === 0 ? (
-                <p className="text-purple-200 text-center py-8">No volunteers yet</p>
+                <p className="text-brand-200 text-center py-8">No volunteers yet</p>
               ) : (
                 leaderboard.map((volunteer) => (
                   <div
@@ -787,7 +787,7 @@ export default function HomePage() {
                     }`}
                   >
                     <div className="text-2xl font-bold text-white/70 w-8">{volunteer.rank}</div>
-                    <div className={`${volunteer.rank === 1 ? 'w-16 h-16' : 'w-14 h-14'} rounded-full bg-purple-500 overflow-hidden flex-shrink-0 ${volunteer.rank === 1 ? 'ring-4 ring-yellow-400' : ''}`}>
+                    <div className={`${volunteer.rank === 1 ? 'w-16 h-16' : 'w-14 h-14'} rounded-full bg-brand-500 overflow-hidden flex-shrink-0 ${volunteer.rank === 1 ? 'ring-4 ring-yellow-400' : ''}`}>
                       {volunteer.profile_photo ? (
                         <img
                           src={pb.files.getURL(volunteer, volunteer.profile_photo)}
@@ -802,7 +802,7 @@ export default function HomePage() {
                       <p className={`font-bold text-white ${volunteer.rank === 1 ? 'text-lg' : 'text-base'}`}>
                         {getVolunteerName(volunteer)}
                       </p>
-                      <p className={`text-purple-200 ${volunteer.rank === 1 ? 'text-base' : 'text-sm'}`}>
+                      <p className={`text-brand-200 ${volunteer.rank === 1 ? 'text-base' : 'text-sm'}`}>
                         {formatTime(volunteer.total_minutes)}
                       </p>
                     </div>

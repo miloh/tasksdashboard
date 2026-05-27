@@ -457,12 +457,12 @@ function TasksPageContent() {
   const getZoneColor = (zone: string) => {
     const colors: Record<string, string> = {
       Woodshop: 'bg-amber-100 text-amber-800 border-amber-300',
-      '3D Printing': 'bg-purple-100 text-purple-800 border-purple-300',
+      '3D Printing': 'bg-brand-100 text-brand-800 border-brand-400',
       Electronics: 'bg-blue-100 text-blue-800 border-blue-300',
       'Laser Cutting': 'bg-red-100 text-red-800 border-red-300',
       CNC: 'bg-green-100 text-green-800 border-green-300',
       General: 'bg-gray-100 text-gray-800 border-gray-300',
-      Admin: 'bg-indigo-100 text-indigo-800 border-indigo-300',
+      Admin: 'bg-indigo-100 text-brand-800 border-indigo-300',
     };
     return colors[zone] || colors.General;
   };
@@ -476,7 +476,7 @@ function TasksPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-brand-50 via-brand-50 to-brand-50">
       {/* Top Navigation Bar */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -499,7 +499,7 @@ function TasksPageContent() {
               </button>
               <button
                 onClick={() => router.push(`/volunteer/goals?id=${volunteerId}`)}
-                className="flex items-center gap-1.5 px-3 sm:px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium text-sm shadow-md"
+                className="flex items-center gap-1.5 px-3 sm:px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-medium text-sm shadow-md"
               >
                 <Target className="w-4 h-4" />
                 <span className="hidden sm:inline">Goals</span>
@@ -558,7 +558,7 @@ function TasksPageContent() {
                   <span className="text-sm font-semibold text-gray-900">{getVolunteerName(volunteer)}</span>
                   <span className="text-xs text-gray-600">{Math.round((volunteer?.total_minutes || 0) / 60)}h</span>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 overflow-hidden flex-shrink-0 border-2 border-white shadow-md">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-secondary-600 overflow-hidden flex-shrink-0 border-2 border-white shadow-md">
                   {volunteer?.profile_photo ? (
                     <img
                       src={pb.files.getURL(volunteer, volunteer.profile_photo)}
@@ -601,7 +601,7 @@ function TasksPageContent() {
                 {activeTasks.map((task) => (
                 <div
                   key={task.id}
-                  className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6 border-2 border-purple-500 relative"
+                  className="bg-gradient-to-br from-brand-50 to-brand-50 rounded-lg shadow-lg hover:shadow-xl transition-shadow p-6 border-2 border-brand-500 relative"
                 >
                   {/* Task Image (if available) */}
                   {task.image && (
@@ -616,7 +616,7 @@ function TasksPageContent() {
                   )}
 
                   <div className="flex items-start justify-between mb-3">
-                    <span className="text-sm font-mono text-purple-700 font-bold">#{task.task_number}</span>
+                    <span className="text-sm font-mono text-brand-700 font-bold">#{task.task_number}</span>
                     <span className={`text-xs px-2 py-1 rounded-full border ${getZoneColor(task.zone)}`}>
                       {task.zone}
                     </span>
@@ -650,7 +650,7 @@ function TasksPageContent() {
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between pt-4 border-t border-purple-200">
+                  <div className="flex items-center justify-between pt-4 border-t border-brand-200">
                     <div className="flex items-center gap-1 text-sm text-gray-500">
                       <Clock className="w-4 h-4" />
                       <span>{formatTime(task.estimated_minutes)}</span>
@@ -811,7 +811,7 @@ function TasksPageContent() {
                 onClick={() => setFilter('all')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                   filter === 'all'
-                    ? 'bg-purple-600 text-white'
+                    ? 'bg-brand-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -826,7 +826,7 @@ function TasksPageContent() {
                     onClick={() => setFilter(zone)}
                     className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                       filter === zone
-                        ? 'bg-purple-600 text-white'
+                        ? 'bg-brand-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
@@ -898,7 +898,7 @@ function TasksPageContent() {
               {sortedTasks.map((task) => (
                 <div
                   key={task.id}
-                  className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 border-l-4 border-purple-500 relative"
+                  className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 border-l-4 border-brand-500 relative"
                 >
                   {/* Task Image (if available) */}
                   {task.image && (
@@ -977,7 +977,7 @@ function TasksPageContent() {
                           return (
                             <button
                               onClick={() => handleClaimTask(task.id)}
-                              className="px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold text-sm"
+                              className="px-3 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold text-sm"
                             >
                               Claim
                             </button>

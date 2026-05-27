@@ -217,7 +217,7 @@ export default function CreateTaskPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 p-4">
       <div className="max-w-2xl mx-auto py-8">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl">
           <div className="text-center mb-8">
@@ -294,7 +294,7 @@ export default function CreateTaskPage() {
                 className="w-full px-4 py-3 rounded-xl bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white/60"
               >
                 {zones.map((zone) => (
-                  <option key={zone} value={zone} className="bg-purple-900">
+                  <option key={zone} value={zone} className="bg-brand-900">
                     {zone}
                   </option>
                 ))}
@@ -335,11 +335,11 @@ export default function CreateTaskPage() {
                 }
                 className="w-full px-4 py-3 rounded-xl bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white/60"
               >
-                <option value="" className="bg-purple-900">
+                <option value="" className="bg-brand-900">
                   -- Leave Unassigned --
                 </option>
                 {volunteers.map((volunteer) => (
-                  <option key={volunteer.id} value={volunteer.id} className="bg-purple-900">
+                  <option key={volunteer.id} value={volunteer.id} className="bg-brand-900">
                     {volunteer.username || volunteer.email}
                   </option>
                 ))}
@@ -379,7 +379,7 @@ export default function CreateTaskPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full bg-white text-purple-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-xl"
+              className="w-full bg-white text-brand-900 font-bold py-4 px-6 rounded-xl hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-xl"
             >
               {submitting ? 'Creating...' : 'Create Task'}
             </button>

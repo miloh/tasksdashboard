@@ -96,13 +96,13 @@ export default function PublicCreationsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-brand-50 via-brand-50 to-brand-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white">
+      <div className="bg-gradient-to-r from-brand-600 via-accent-600 to-secondary-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-4">🎨 Community Creations</h1>
-            <p className="text-xl text-purple-100 mb-6">
+            <p className="text-xl text-brand-100 mb-6">
               Amazing projects made by volunteers at {siteConfig.name}
             </p>
             <button
@@ -142,7 +142,7 @@ export default function PublicCreationsPage() {
                     />
                   </div>
                 ) : (
-                  <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                  <div className="aspect-video bg-gradient-to-br from-brand-100 to-accent-500/20 flex items-center justify-center">
                     <span className="text-7xl">🎨</span>
                   </div>
                 )}
@@ -154,7 +154,7 @@ export default function PublicCreationsPage() {
 
                   {/* Creator Info */}
                   <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 overflow-hidden flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-600 to-secondary-600 overflow-hidden flex-shrink-0">
                       {creation.volunteer_photo ? (
                         <img
                           src={pb.files.getURL({ id: creation.volunteer, collectionName: 'volunteers' }, creation.volunteer_photo)}
@@ -172,7 +172,7 @@ export default function PublicCreationsPage() {
                       <p className="text-xs text-gray-500">{new Date(creation.created).toLocaleDateString()}</p>
                     </div>
                     {creation.photos && creation.photos.length > 1 && (
-                      <span className="text-sm text-purple-600 font-medium">
+                      <span className="text-sm text-brand-600 font-medium">
                         📷 {creation.photos.length}
                       </span>
                     )}
