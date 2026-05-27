@@ -1,4 +1,5 @@
 'use client';
+import { siteConfig } from '@/lib/site-config';
 
 import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -214,7 +215,7 @@ function GoalsPageContent() {
             <div>
               <h1 className="text-4xl font-bold mb-2">🎯 Learning Goals</h1>
               <p className="text-purple-100 text-lg">
-                Master the equipment and skills at Chico Fab Lab
+                Master the equipment and skills at {siteConfig.name}
               </p>
             </div>
             <div className="text-right">

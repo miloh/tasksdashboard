@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site-config';
 /**
  * Discord Task Completion DM API
  * Sends DMs to volunteers when they complete a task
@@ -78,7 +79,7 @@ export async function POST(request: NextRequest) {
           ],
           timestamp: new Date().toISOString(),
           footer: {
-            text: 'Chico FabLab Task Dashboard',
+            text: siteConfig.name + ' Task Dashboard',
           },
         };
 

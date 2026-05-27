@@ -1,3 +1,4 @@
+import { siteConfig } from '@/lib/site-config';
 /**
  * Discord Integration Library
  * Utilities for sending messages to Discord channels
@@ -134,7 +135,7 @@ export function formatTaskAnnouncement(task: {
     ],
     timestamp: new Date().toISOString(),
     footer: {
-      text: 'Chico FabLab Task Dashboard',
+      text: siteConfig.name + ' Task Dashboard',
     },
   };
 
@@ -180,7 +181,7 @@ export function formatTaskReminder(task: {
     ],
     timestamp: new Date().toISOString(),
     footer: {
-      text: 'Chico FabLab Task Dashboard',
+      text: siteConfig.name + ' Task Dashboard',
     },
   };
 
@@ -255,7 +256,7 @@ export function formatTaskCompletion(task: {
     fields,
     timestamp: new Date().toISOString(),
     footer: {
-      text: 'Chico FabLab Task Dashboard',
+      text: siteConfig.name + ' Task Dashboard',
     },
   };
 
@@ -302,7 +303,7 @@ export function formatTaskAssignment(task: {
     ],
     timestamp: new Date().toISOString(),
     footer: {
-      text: 'Chico FabLab Task Dashboard',
+      text: siteConfig.name + ' Task Dashboard',
     },
   };
 

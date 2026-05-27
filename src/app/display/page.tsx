@@ -1,5 +1,6 @@
 'use client';
 
+import { siteConfig } from '@/lib/site-config';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useSession } from 'next-auth/react';
@@ -471,7 +472,7 @@ export default function DisplayPage() {
           <div className="flex-1">
             <h1 className="text-2xl font-bold text-white mb-0.5 flex items-center gap-2">
               <Hammer className="w-6 h-6" />
-              Chico Fab Lab Volunteer Board
+              {siteConfig.name} Volunteer Board
             </h1>
             <p className="text-sm text-purple-200">
               Make an impact • Earn recognition • Build community
@@ -500,8 +501,8 @@ export default function DisplayPage() {
               {/* Large Logo (Left Side) */}
               <div className="w-[400px] h-[400px] relative rounded-full overflow-hidden bg-white shadow-2xl p-6 flex items-center justify-center flex-shrink-0">
                  <img 
-                    src="/fablab-logo.webp" 
-                    alt="Chico Fab Lab"
+                    src={siteConfig.logoPath} 
+                    alt={siteConfig.name}
                     className="w-full h-full object-contain"
                     onError={(e) => {
                         e.currentTarget.style.display = 'none';
@@ -513,7 +514,7 @@ export default function DisplayPage() {
               {/* Description (Right Side) */}
               <div className="flex-1 space-y-6 text-left">
                 <h1 className="text-7xl font-bold text-white tracking-tight drop-shadow-lg">
-                  Chico Fab Lab
+                  {siteConfig.name}
                 </h1>
                 <p className="text-3xl text-purple-100 leading-relaxed font-light drop-shadow-md">
                   We are a nonprofit makerspace where the community comes together to learn, share, and create. 

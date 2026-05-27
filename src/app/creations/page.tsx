@@ -1,4 +1,5 @@
 'use client';
+import { siteConfig } from '@/lib/site-config';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -102,7 +103,7 @@ export default function PublicCreationsPage() {
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-4">🎨 Community Creations</h1>
             <p className="text-xl text-purple-100 mb-6">
-              Amazing projects made by volunteers at Chico Fab Lab
+              Amazing projects made by volunteers at {siteConfig.name}
             </p>
             <button
               onClick={() => router.push('/')}

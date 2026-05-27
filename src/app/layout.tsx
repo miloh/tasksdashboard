@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CFL Volunteer Dashboard",
-  description: "Chico Fab Lab volunteer task tracking system",
+  title: "Volunteer Dashboard",
+  description: "Volunteer task tracking system",
 };
 
 export default function RootLayout({

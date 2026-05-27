@@ -1,4 +1,5 @@
 'use client';
+import { siteConfig } from '@/lib/site-config';
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -43,7 +44,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="text-white/60 text-sm text-center mt-6">
-          Chico Fab Lab Volunteer Dashboard
+          {siteConfig.name} Volunteer Dashboard
         </p>
       </div>
     </div>

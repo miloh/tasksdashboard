@@ -1,5 +1,6 @@
 'use client';
 
+import { siteConfig } from '@/lib/site-config';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useSession } from 'next-auth/react';
@@ -318,7 +319,7 @@ export default function HomePage() {
             <div className="flex-1">
               <h1 className="text-2xl font-bold text-white mb-0.5 flex items-center gap-2">
                 <Hammer className="w-6 h-6" />
-                Chico Fab Lab Volunteer Board
+                {siteConfig.name} Volunteer Board
         </h1>
               <p className="text-sm text-purple-200 flex items-center gap-3">
                 <span className="flex items-center gap-1"><Target className="w-3.5 h-3.5" /> Make an impact</span>
@@ -347,8 +348,8 @@ export default function HomePage() {
               <div className="max-w-7xl w-full flex items-center justify-between gap-16 px-12">
                 <div className="w-[400px] h-[400px] relative rounded-full overflow-hidden bg-white shadow-2xl p-6 flex items-center justify-center flex-shrink-0">
                   <img 
-                    src="/fablab-logo.webp" 
-                    alt="Chico Fab Lab"
+                    src={siteConfig.logoPath} 
+                    alt={siteConfig.name}
                     className="w-full h-full object-contain"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
@@ -358,7 +359,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex-1 space-y-6 text-left">
                   <h1 className="text-7xl font-bold text-white tracking-tight drop-shadow-lg">
-                    Chico Fab Lab
+                    {siteConfig.name}
                   </h1>
                   <p className="text-3xl text-purple-100 leading-relaxed font-light drop-shadow-md">
                     We are a nonprofit makerspace where the community comes together to learn, share, and create. 
@@ -588,7 +589,7 @@ export default function HomePage() {
         <div className="bg-white/10 backdrop-blur-md p-4 border-b border-white/20">
           <h1 className="text-xl font-bold text-white text-center mb-2 flex items-center justify-center gap-2">
             <Hammer className="w-5 h-5" />
-            Chico Fab Lab
+            {siteConfig.name}
           </h1>
           <a
             href="/auth/discord"

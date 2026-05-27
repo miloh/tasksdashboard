@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <circle cx="100" cy="100" r="90" fill="#7c3aed" opacity="0.15"/>
+  <circle cx="100" cy="100" r="60" fill="#7c3aed" opacity="0.25"/>
+  <path d="M100 55 L120 85 H80 Z" fill="#7c3aed" transform="translate(0,-5)"/>
+  <rect x="88" y="85" width="24" height="40" rx="3" fill="#7c3aed"/>
+  <rect x="78" y="105" width="44" height="8" rx="2" fill="#7c3aed"/>
+  <text x="100" y="155" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#7c3aed">TASKS</text>
+</svg>
