@@ -8,7 +8,7 @@ export default function VolunteerPage() {
 
   useEffect(() => {
     // Redirect to Discord auth page
-    router.push('/auth/discord');
+    router.push('/volunteer/tasks');
   }, [router]);
 
   return (

@@ -71,20 +71,21 @@ function TasksPageContent() {
   }, [router]);
 
   // Fetch volunteer data
-  useEffect(() => {
-    if (!volunteerId) {
-      router.push('/volunteer');
+useEffect(() => {
+    const vid = volunteerId || (session?.user as any)?.volunteerId;
+    if (!vid) {
+      setLoading(false);
       return;
     }
 
     // Store volunteer ID in localStorage for navigation
-    localStorage.setItem('volunteerId', volunteerId);
+    localStorage.setItem('volunteerId', vid);
 
     async function fetchVolunteer() {
-      if (!volunteerId) return;
+      if (!vid) return;
 
       try {
-        const record = await pb.collection('volunteers').getOne<Volunteer>(volunteerId);
+        const record = await pb.collection('volunteers').getOne<Volunteer>(vid);
         setVolunteer(record);
       } catch (err) {
         console.error('Error fetching volunteer:', err);
@@ -93,11 +94,12 @@ function TasksPageContent() {
     }
 
     fetchVolunteer();
-  }, [volunteerId, router]);
+  }, [volunteerId, session, router]);
 
   // Fetch active (in-progress) tasks assigned to this volunteer
   useEffect(() => {
-    if (!volunteerId) return;
+    const vid = volunteerId || (session?.user as any)?.volunteerId; 
+    if (!vid) return;
 
     async function fetchActiveTasks() {
       try {
