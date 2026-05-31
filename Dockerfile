@@ -26,8 +26,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV NEXT_PUBLIC_POCKETBASE_URL=http://localhost:8090
-ENV NEXT_PUBLIC_BASE_URL=http://localhost:3000
+ARG NEXT_PUBLIC_POCKETBASE_URL
+ARG NEXT_PUBLIC_BASE_URL
 
 RUN npm run build
 
