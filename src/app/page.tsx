@@ -297,11 +297,11 @@ export default function HomePage() {
     const colors: Record<string, string> = {
       Woodshop: 'bg-amber-100 text-amber-800 border-amber-300',
       '3D Printing': 'bg-brand-100 text-brand-800 border-brand-400',
-      Electronics: 'bg-blue-100 text-blue-800 border-blue-300',
+      Electronics: 'bg-brand-50 text-brand-900 border-brand-500',
       'Laser Cutting': 'bg-red-100 text-red-800 border-red-300',
       CNC: 'bg-green-100 text-green-800 border-green-300',
       General: 'bg-gray-100 text-gray-800 border-gray-300',
-      Admin: 'bg-indigo-100 text-brand-800 border-indigo-300',
+      Admin: 'bg-brand-50 text-brand-900 border-brand-500',
     };
     return colors[zone] || colors.General;
   };

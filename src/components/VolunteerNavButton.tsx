@@ -88,7 +88,7 @@ export default function VolunteerNavButton() {
   return (
     <a
       href={`/volunteer/tasks?id=${volunteerId}`}
-      className="fixed top-4 right-4 z-50 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-lg transition-colors font-semibold text-sm flex items-center gap-2"
+      className="fixed top-4 right-4 z-50 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg shadow-lg transition-colors font-semibold text-sm flex items-center gap-2"
     >
       {volunteer?.profile_photo ? (
         <img

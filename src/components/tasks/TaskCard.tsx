@@ -32,16 +32,16 @@ export function TaskCard({
     switch (task.status) {
       case 'completed': return 'bg-green-100 text-green-800';
       case 'in_progress': return 'bg-yellow-100 text-yellow-800';
-      default: return 'bg-blue-100 text-blue-800';
+      default: return 'bg-brand-50 text-brand-900';
     }
   };
 
   const getZoneColor = () => {
     const colors: Record<string, string> = {
       'Wood Shop': 'bg-amber-500',
-      'Electronics': 'bg-blue-500',
+      'Electronics': 'bg-brand-600',
       'Laser': 'bg-red-500',
-      '3D Printing': 'bg-purple-500',
+      '3D Printing': 'bg-brand-600',
       'CNC': 'bg-green-500',
       'Vinyl': 'bg-pink-500',
       'General': 'bg-gray-500',
@@ -122,7 +122,7 @@ export function TaskCard({
           {showClaimButton && !isAssignedToMe && onClaim && (
             <button
               onClick={() => onClaim(task.id)}
-              className="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+              className="flex-1 bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
             >
               Claim
             </button>

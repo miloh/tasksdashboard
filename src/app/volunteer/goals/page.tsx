@@ -293,7 +293,7 @@ function GoalsPageContent() {
                         <div className="text-4xl">{goal.icon}</div>
                         <div className="flex gap-2">
                           {goal.is_sbu && (
-                            <div className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                            <div className="bg-brand-600 text-white px-2 py-1 rounded text-xs font-semibold">
                               SBU
                             </div>
                           )}
@@ -355,7 +355,7 @@ function GoalsPageContent() {
                           <>
                             <button
                               onClick={() => setEditingGoal(goal)}
-                              className="px-3 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
+                              className="px-3 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-lg transition-colors"
                               title="Edit Goal"
                             >
                               ✏️

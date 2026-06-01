@@ -299,7 +299,7 @@ export default function AdminDashboard() {
                     <div className="flex gap-2">
                       <button
                         onClick={() => router.push(`/task/edit/${task.id}`)}
-                        className="ml-4 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors text-sm font-medium"
+                        className="ml-4 px-3 py-2 bg-brand-50 text-brand-900 rounded-lg hover:bg-brand-100 transition-colors text-sm font-medium"
                       >
                         Edit
                       </button>

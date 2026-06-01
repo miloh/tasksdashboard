@@ -95,7 +95,7 @@ export default function TaskDetailPage() {
   const getZoneColor = (zone: string) => {
     switch (zone) {
       case 'Woodshop': return 'bg-amber-50 text-amber-700 border-amber-300';
-      case '3D Printing': return 'bg-blue-50 text-blue-700 border-blue-300';
+      case '3D Printing': return 'bg-brand-50 text-brand-900 border-brand-500';
       case 'Electronics': return 'bg-yellow-50 text-yellow-700 border-yellow-300';
       case 'Laser Cutting': return 'bg-red-50 text-red-700 border-red-300';
       case 'CNC': return 'bg-brand-50 text-brand-700 border-brand-400';
@@ -110,7 +110,7 @@ export default function TaskDetailPage() {
       case 'open':
         return <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">🟢 Open</span>;
       case 'in_progress':
-        return <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">🔵 In Progress</span>;
+        return <span className="px-3 py-1 bg-brand-100 text-brand-900 rounded-full text-sm font-semibold">🔵 In Progress</span>;
       case 'completed':
         return <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold">✅ Completed</span>;
       default:
@@ -279,7 +279,7 @@ export default function TaskDetailPage() {
 
           {task.status === 'in_progress' && (
             <div className="mt-8 pt-6 border-t border-white/20">
-              <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4">
+              <div className="bg-brand-600/20 border border-brand-500/30 rounded-xl p-4">
                 <p className="text-white text-center">
                   🔵 This task is currently being worked on
                 </p>

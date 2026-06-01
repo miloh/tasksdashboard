@@ -214,7 +214,7 @@ export default function CreationDetailPage({ params }: CreationDetailProps) {
             <div className="mt-8 pt-8 border-t border-gray-200 flex gap-4">
               <button
                 onClick={() => router.push('/creations')}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-brand-600 to-accent-600 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg"
+                className="flex-1 px-6 py-3 bg-gradient-to-r from-brand-600 to-accent-600 text-white rounded-xl font-semibold hover:from-brand-900 hover:to-accent-600 transition-all shadow-lg"
               >
                 View More Creations
               </button>

@@ -400,7 +400,7 @@ export default function GoalsAdminPage() {
               <button
                 type="button"
                 onClick={copyToClipboard}
-                className="px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors"
+                className="px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-700 transition-colors"
                 title="Copy JSON for manual PocketBase entry"
               >
                 📋 Copy JSON

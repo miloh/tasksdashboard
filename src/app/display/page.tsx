@@ -364,11 +364,11 @@ export default function DisplayPage() {
     const colors: Record<string, string> = {
       Woodshop: 'bg-amber-100 text-amber-800 border-amber-300',
       '3D Printing': 'bg-brand-100 text-brand-800 border-brand-400',
-      Electronics: 'bg-blue-100 text-blue-800 border-blue-300',
+      Electronics: 'bg-brand-50 text-brand-900 border-brand-500',
       'Laser Cutting': 'bg-red-100 text-red-800 border-red-300',
       CNC: 'bg-green-100 text-green-800 border-green-300',
       General: 'bg-gray-100 text-gray-800 border-gray-300',
-      Admin: 'bg-indigo-100 text-brand-800 border-indigo-300',
+      Admin: 'bg-brand-50 text-brand-900 border-brand-500',
     };
     return colors[zone] || colors.General;
   };
@@ -624,7 +624,7 @@ export default function DisplayPage() {
                         {isAuthenticated && (
                           <a
                             href={`/task/edit/${task.id}`}
-                          className="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center transition-colors text-xs shadow-md"
+                          className="bg-brand-600 hover:bg-brand-700 text-white rounded-full w-6 h-6 flex items-center justify-center transition-colors text-xs shadow-md"
                           title="Edit Task"
                         >
                           <Edit className="w-3 h-3" />
@@ -720,7 +720,7 @@ export default function DisplayPage() {
                     {isAuthenticated && (
                       <a
                         href={`/task/edit/${task.id}`}
-                        className="absolute top-1 right-1 bg-blue-500 hover:bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center transition-colors text-xs z-10 shadow-sm"
+                        className="absolute top-1 right-1 bg-brand-600 hover:bg-brand-700 text-white rounded-full w-5 h-5 flex items-center justify-center transition-colors text-xs z-10 shadow-sm"
                         title="Edit Task"
                       >
                         <Edit className="w-3 h-3" />
