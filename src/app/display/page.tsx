@@ -517,8 +517,7 @@ export default function DisplayPage() {
                   {siteConfig.name}
                 </h1>
                 <p className="text-3xl text-brand-100 leading-relaxed font-light drop-shadow-md">
-                  We are a nonprofit makerspace where the community comes together to learn, share, and create. 
-                  From 3D printing and laser cutting to woodworking and electronics, we provide access to tools, knowledge, and collaboration.
+                  {siteConfig.description}
                 </p>
               </div>
             </div>
