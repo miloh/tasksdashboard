@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 import pb from '@/lib/pocketbase';
 import type { Task, Volunteer } from '@/lib/pocketbase';
 import { Plus, MessageCircle } from 'lucide-react';
 
 export default function CreateTaskPage() {
   const router = useRouter();
+  const { data: session, status } = useSession();
   const [formData, setFormData] = useState({
     task_number: 1,
     title: '',
@@ -22,6 +24,12 @@ export default function CreateTaskPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    if (status !== 'loading' && (status === 'unauthenticated' || !session?.user)) {
+       router.push('/auth/discord');
+    }
+  }, [status,session, router]);
+
   // Auto-generate next task number on mount
   useEffect(() => {
     const getNextTaskNumber = async () => {
@@ -31,7 +39,6 @@ export default function CreateTaskPage() {
           sort: '-task_number',
         });
         const mainBoardTasks = tasks.items;
-
         // If there are tasks, increment the highest number, otherwise start at 1
         const nextNumber = mainBoardTasks.length > 0 ? mainBoardTasks[0].task_number + 1 : 1;
         setFormData(prev => ({ ...prev, task_number: nextNumber }));
@@ -40,7 +47,7 @@ export default function CreateTaskPage() {
         // Default to 1 if there's an error
         setFormData(prev => ({ ...prev, task_number: 1 }));
       }
-    };
+  };
 
     getNextTaskNumber();
   }, []);
@@ -91,7 +98,8 @@ export default function CreateTaskPage() {
 
     try {
       // Get volunteerId from session or localStorage
-      const volunteerId = localStorage.getItem('volunteerId');
+      // const volunteerId = localStorage.getItem('volunteerId');
+      const volunteerId = (session?.user as any)?.id || localStorage.getItem('volunteerId');
       if (!volunteerId) {
         setError('Volunteer ID not found. Please log in again.');
         setSubmitting(false);
@@ -215,6 +223,12 @@ export default function CreateTaskPage() {
       setSubmitting(false);
     }
   };
+  console.log('Auth status:', status, 'Session:', session);
+  if (status === 'loading') return null;
+  if (status === 'unauthenticated' || !session?.user) {
+     router.push('/auth/discord');
+     return null;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-brand-900 via-secondary-900 to-secondary-900 p-4">
