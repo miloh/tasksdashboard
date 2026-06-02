@@ -25,7 +25,7 @@ export default function CreateTaskPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    if (status !== 'loading' && (status === 'unauthenticated' || !session?.user)) {
+    if (status === 'unauthenticated' )) {
        router.push('/auth/discord');
     }
   }, [status,session, router]);
@@ -225,7 +225,7 @@ export default function CreateTaskPage() {
   };
   console.log('Auth status:', status, 'Session:', session);
   if (status === 'loading') return null;
-  if (status === 'unauthenticated' || !session?.user) {
+  if (status === 'unauthenticated' ) {
      router.push('/auth/discord');
      return null;
   }
