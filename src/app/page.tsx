@@ -368,7 +368,7 @@ export default function HomePage() {
               </div>
             </div>
           ) : (
-            <div className="grid gap-3 flex-1 overflow-hidden" style={{ gridTemplateColumns: '60% 13.33% 13.33% 13.33%' }}>
+            <div className="grid gap-3 flex-1 overflow-hidden" style={{ gridTemplateColumns: '9fr 2fr 2fr 2fr' }}>
               {/* Open Tasks */}
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20 flex flex-col overflow-hidden">
                 <h2 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
